@@ -14,7 +14,7 @@ Para a parte física do alimentador, utilizamos canos pvc de 4 polegadas, um mot
 ![montagem](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
 ![cano](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
 ![joelho](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/joelho-pvc.png?raw=true)
-![tampa](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
+![tampa](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Tampa.png?raw=true)
 ![motor](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/motor%20ventilador.png?raw=true)
 ![motor2](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/motor-microonda.png?raw=true)
 
