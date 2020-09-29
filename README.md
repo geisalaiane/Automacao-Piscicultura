@@ -11,10 +11,14 @@ O projeto consiste na criação de um protótipo voltado para a piscicultura, fo
 
 Para a parte física do alimentador, utilizamos canos pvc de 4 polegadas, um motor 127V de prato de microondas e um motor 127V de ventilador, sendo um para o controle de vazão da ração e o outro para o lanço da mesma. Colocamos o cano PVC em pé onde a ração fica armazenada, e perfuramos a tampa na parte de baixo, onde fixamos o motor com um fio de aço transpassado, que ao girar, deixa cair a ração para o motor de ventilador, onde é lançada para o tanque de água.
 
+![montagem](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
 ![cano](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
-![cano](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
-![cano](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
-![cano](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
+![joelho](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/joelho-pvc.png?raw=true)
+![tampa](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
+![motor](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/motor%20ventilador.png?raw=true)
+![motor2](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/motor-microonda.png?raw=true)
+
+
 
 ### 💻 Tecnologia 
 
