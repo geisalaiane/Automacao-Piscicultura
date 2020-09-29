@@ -24,6 +24,7 @@ Para a parte física do alimentador, utilizamos canos pvc de 4 polegadas, um mot
 ### 💻 Tecnologia 
 
 Para o controle de ambos os motores, utilizamos um módulo relé 5v, junto a protoboard com uma fonte. Para acionamento utilizamos uma NodeMCU-V3, conectada à rede WIFI, se comunicando via protocólo MQTT, sendo tanto 'publish' quanto 'subscribe', utilizando o broker público 'broker.emqx.io'. Para visualização do histórico de ativação utilizamos o ThingSpeak. 
+
 ![rele](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/rele%20shield.png?raw=true)
 ![esp](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/esp8266-nodemcuv3%20-%20lolin.png?raw=true)
 ![fonte](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/fonteprotoboard.png?raw=true)
