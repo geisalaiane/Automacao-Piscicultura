@@ -43,7 +43,7 @@ void loop() {
 ```
 ___
 #### Implementação do MQTT
-```
+~~~~
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 const char *ssid = "Gilza";                 //WiFi name
@@ -93,7 +93,7 @@ void callback(char *topic, byte *payload, unsigned int length)
     Serial.print("STR:");
     Serial.println(strMSG);
 }
-
+~~~~
 ___
 #### Temporizador do Lanço 
 ```int motor = 5;
