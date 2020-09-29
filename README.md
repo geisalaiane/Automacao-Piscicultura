@@ -100,7 +100,8 @@ void callback(char *topic, byte *payload, unsigned int length)
 ~~~~
 ___
 #### Temporizador do Lanço 
-```int motor = 5;
+```
+int motor = 5;
 int ventilador = 4;
 int cont = 0;
 void setup() {
