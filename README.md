@@ -1,10 +1,10 @@
 ## Bem vindo a página do nosso projeto
 
-Projeto realizado pelos alunos [Fabrício da Silva Selotto](https://gitlab.com/Selotto) e [Geísa Laiane Cardim](https://gitlab.com/geisa), da Fatec Shunji Nishimura, do curso de Big Data no Agronegócio
+Projeto realizado pelos alunos [Fabrício da Silva Selotto](https://gitlab.com/Selotto) e [Geísa Laiane Cardim](https://gitlab.com/geisa), da Fatec Shunji Nishimura, do curso de Big Data no Agronegócio.
 
-### Markdown
+### Introdução
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+O projeto consiste na criação de um protótipo voltado para a piscicultura, focando na área da alimentação. Trata-se de um alimentador automático para peixes, de baixo custo e uso doméstico, utlizando tecnologia IOT.
 
 ```markdown
 Syntax highlighted code block
