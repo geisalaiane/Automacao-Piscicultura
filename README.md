@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## Bem vindo a página do nosso projeto
 
-You can use the [editor on GitHub](https://github.com/geisalaiane/automacao-piscicultura/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Projeto realizado por alunos da Fatec Shunji Nishimura, do curso de Big Data no Agronegócio, [Fabrício da Silva Selotto](https://gitlab.com/Selotto) e [Geísa Laiane Cardim](https://gitlab.com/geisa)
 
 ### Markdown
 
