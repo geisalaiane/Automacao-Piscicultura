@@ -27,7 +27,7 @@ Para calibração do tempo de despejo de ração, fomos colocando determinado pe
 ### 📄 Código
 
 #### Implementação do Horário
-'''
+```
 #include <WiFiUdp.h>
 String horario;
 void loop() {
@@ -40,11 +40,10 @@ void loop() {
   }
   delay(1000);
 }
-'''
+```
 ___
 #### Temporizador do Lanço 
-'''
-int motor = 5;
+```int motor = 5;
 int ventilador = 4;
 int cont = 0;
 void setup() {
@@ -98,7 +97,7 @@ void loop() {
  Serial.println(cont);
  cont= cont + 1;
  }
-'''
+```
 ___
 #### Implementação do MQTT
 ___
