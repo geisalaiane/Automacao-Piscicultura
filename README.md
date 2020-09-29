@@ -1,4 +1,4 @@
-# Bem vindo a página do nosso projeto
+# 🌸 Bem vindo a página do nosso projeto
 
 Projeto realizado pelos alunos [Fabrício da Silva Selotto](https://gitlab.com/Selotto) e [Geísa Laiane Cardim](https://gitlab.com/geisa), da Fatec Shunji Nishimura, do curso de Big Data no Agronegócio.
 
@@ -18,4 +18,8 @@ Para o controle de ambos os motores, utilizamos um módulo relé 5v, junto a pro
 
 ### Teste
 
+Para calibração do tempo de despejo de ração, fomos colocando determinado período de tempo, testando 5 vezes, e fazendo a média de pesos da ração dispensada. Conseguimos chegar em um tempo padrão, onde obtivemos 1KG de ração despejada.
 
+### Código
+
+Para acessar os códigos desenvolvido até agora, [clique aqui]()
