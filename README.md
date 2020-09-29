@@ -11,7 +11,7 @@ O projeto consiste na criação de um protótipo voltado para a piscicultura, fo
 
 Para a parte física do alimentador, utilizamos canos pvc de 4 polegadas, um motor 127V de prato de microondas e um motor 127V de ventilador, sendo um para o controle de vazão da ração e o outro para o lanço da mesma. Colocamos o cano PVC em pé onde a ração fica armazenada, e perfuramos a tampa na parte de baixo, onde fixamos o motor com um fio de aço transpassado, que ao girar, deixa cair a ração para o motor de ventilador, onde é lançada para o tanque de água.
 
-![montagem](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
+![montagem](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/montagem.png?raw=true)
 ![cano](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
 ![joelho](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/joelho-pvc.png?raw=true)
 ![tampa](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Tampa.png?raw=true)
@@ -20,9 +20,16 @@ Para a parte física do alimentador, utilizamos canos pvc de 4 polegadas, um mot
 
 
 
+
 ### 💻 Tecnologia 
 
 Para o controle de ambos os motores, utilizamos um módulo relé 5v, junto a protoboard com uma fonte. Para acionamento utilizamos uma NodeMCU-V3, conectada à rede WIFI, se comunicando via protocólo MQTT, sendo tanto 'publish' quanto 'subscribe', utilizando o broker público 'broker.emqx.io'. Para visualização do histórico de ativação utilizamos o ThingSpeak. 
+![rele](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/rele%20shield.png?raw=true)
+![esp](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/esp8266-nodemcuv3%20-%20lolin.png?raw=true)
+![fonte](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/fonteprotoboard.png?raw=true)
+![esp_proto_rele](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/rele_proto.png?raw=true)
+![fonte_proto](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Placa-Fonte.png?raw=true)
+![montagem](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/sistema.png?raw=true)
 
 ### 🔧 Teste
 
