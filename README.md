@@ -42,6 +42,59 @@ void loop() {
 }
 ```
 ___
+#### Implementação do MQTT
+```
+#include <ESP8266WiFi.h>
+#include <PubSubClient.h>
+const char *ssid = "Gilza";                 //WiFi name
+const char *password = "gilmar91";          //WiFi password
+const char *mqtt_broker = "broker.emqx.io"; //broker público
+const int mqtt_port = 1883;                 //porta padrão de comunicação
+WiFiClient espClient;
+PubSubClient client(espClient);
+void setup()
+{   WiFi.begin(ssid, password); //conectando no wifi
+    while (WiFi.status() != WL_CONNECTED)
+    {   delay(500);
+        Serial.println("Conectando no Wifi ...");
+    }
+    Serial.println("Conectado!");
+    //connecting to a mqtt broker
+    client.setServer(mqtt_broker, mqtt_port);
+    client.setCallback(callback);
+    while (!client.connected())
+    {   Serial.println("Conectando no broker mqtt ...");
+        Serial.println("");
+        if (client.connect("esp8266-client"))
+        {   Serial.println("Conectado no broker mqtt!");
+        }
+        else
+        {   Serial.print("Falha de conexão ao mqtt");
+            Serial.print(client.state());
+            delay(2000);
+        }
+    }
+    // publish and subscribe
+    client.publish("IOTFGFatec/status", "Sistema Conectado");
+    client.subscribe("IOTFGFatec/ativacao");
+}
+void callback(char *topic, byte *payload, unsigned int length)
+{   payload[length] = '\0'; //armazena msg recebida em uma sring
+    String strMSG = String((char *)payload);
+
+#ifdef DEBUG
+    Serial.print("Mensagem chegou do tópico: ");
+    Serial.println(topic);
+    Serial.print("Mensagem:");
+    Serial.print(strMSG);
+    Serial.println();
+    Serial.println("-----------------------");
+#endif
+    Serial.print("STR:");
+    Serial.println(strMSG);
+}
+
+___
 #### Temporizador do Lanço 
 ```int motor = 5;
 int ventilador = 4;
@@ -112,56 +165,3 @@ void timerligar()
     delay(1000);
 }
 ```
-___
-#### Implementação do MQTT
-```
-#include <ESP8266WiFi.h>
-#include <PubSubClient.h>
-const char *ssid = "Gilza";                 //WiFi name
-const char *password = "gilmar91";          //WiFi password
-const char *mqtt_broker = "broker.emqx.io"; //broker público
-const int mqtt_port = 1883;                 //porta padrão de comunicação
-WiFiClient espClient;
-PubSubClient client(espClient);
-void setup()
-{   WiFi.begin(ssid, password); //conectando no wifi
-    while (WiFi.status() != WL_CONNECTED)
-    {   delay(500);
-        Serial.println("Conectando no Wifi ...");
-    }
-    Serial.println("Conectado!");
-    //connecting to a mqtt broker
-    client.setServer(mqtt_broker, mqtt_port);
-    client.setCallback(callback);
-    while (!client.connected())
-    {   Serial.println("Conectando no broker mqtt ...");
-        Serial.println("");
-        if (client.connect("esp8266-client"))
-        {   Serial.println("Conectado no broker mqtt!");
-        }
-        else
-        {   Serial.print("Falha de conexão ao mqtt");
-            Serial.print(client.state());
-            delay(2000);
-        }
-    }
-    // publish and subscribe
-    client.publish("IOTFGFatec/status", "Sistema Conectado");
-    client.subscribe("IOTFGFatec/ativacao");
-}
-void callback(char *topic, byte *payload, unsigned int length)
-{   payload[length] = '\0'; //armazena msg recebida em uma sring
-    String strMSG = String((char *)payload);
-
-#ifdef DEBUG
-    Serial.print("Mensagem chegou do tópico: ");
-    Serial.println(topic);
-    Serial.print("Mensagem:");
-    Serial.print(strMSG);
-    Serial.println();
-    Serial.println("-----------------------");
-#endif
-    Serial.print("STR:");
-    Serial.println(strMSG);
-}
-
