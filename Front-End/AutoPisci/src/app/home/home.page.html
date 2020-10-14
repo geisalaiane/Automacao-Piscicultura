@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      AutoPisci
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">AutoPisci</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      Confira os últimos horários em que o aparelho foi ligado:
+    </ion-card-content>
+    <ion-card-content>
+      <iframe width="100%" height="262" style="border: 1px solid #cccccc;"
+        src="https://thingspeak.com/channels/1172259/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button (click)="sendMessage('AUT1')" value="auto">
+      <ion-label>Automático</ion-label>
+    </ion-segment-button>
+    <ion-segment-button (click)="sendMessage('M1')" value="manual">
+      <ion-label>Manual</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <br>
+
+  <div class="row">
+    <div class="col" style="text-align: center;">
+      <ion-button color="primary" (click)="funcaoenviar()">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-icon name="power"></ion-icon>
+              <ion-col>
+                Ligar
+              </ion-col>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-button>
+    </div>
+  </div>
+
+
+</ion-content>
