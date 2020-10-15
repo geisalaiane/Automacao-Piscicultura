@@ -12,9 +12,16 @@ router.get("/send", async (req, res) => {
 
   return res.json(message)
 })
+/*router.get("/received", async (req, res) => {
+  const { message } = req.query
+
+  client.subscriber('IOTFGFatec/status', message)
+
+  return res.json(message)
+})*/
 
 app.use(cors())
 app.use(express.json())
 app.use(router)
 
-app.listen(3000, () => console.log('Server started'))
+app.listen(process.env.PORT || 3000, () => console.log('Server started'))
