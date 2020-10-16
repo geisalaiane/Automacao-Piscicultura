@@ -23,17 +23,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-segment (ionChange)="segmentChanged($event)">
+  <ion-segment>
     <ion-segment-button
-      (click)="sendMessage('AUT1'); disableClick()"
-      value="auto"
-    >
+      (click)="sendMessage('AUT1'); disableClick()" value="auto">
       <ion-label>Automático</ion-label>
     </ion-segment-button>
     <ion-segment-button
-      (click)="sendMessage('M1'); enableClick()"
-      value="manual"
-    >
+      (click)="sendMessage('M1'); enableClick()" value="manual">
       <ion-label>Manual</ion-label>
     </ion-segment-button>
   </ion-segment>
@@ -41,11 +37,7 @@
 
   <div class="row">
     <div class="col" style="text-align: center">
-      <ion-button
-        color="primary"
-        (click)="sendMessage('ATIVAR1')"
-        [disabled]="disableButton"
-      >
+      <ion-button color="primary" (click)="sendMessage('ATIVAR1')" [disabled]="disableButton">
         <ion-grid>
           <ion-row>
             <ion-col>
