@@ -25,10 +25,10 @@
   </ion-card>
 
   <ion-segment (ionChange)="segmentChanged($event)">
-    <ion-segment-button (click)="sendMessage('AUT1')" value="auto">
+    <ion-segment-button (click)="sendMessage('AUT1'); disableClick()" value="auto">
       <ion-label>Automático</ion-label>
     </ion-segment-button>
-    <ion-segment-button (click)="sendMessage('M1')" value="manual">
+    <ion-segment-button (click)="sendMessage('M1'); enableClick()" value="manual">
       <ion-label>Manual</ion-label>
     </ion-segment-button>
   </ion-segment>
