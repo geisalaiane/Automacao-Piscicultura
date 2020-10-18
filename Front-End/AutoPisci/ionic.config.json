@@ -1,7 +1,0 @@
-{
-  "name": "AutoPisci",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
