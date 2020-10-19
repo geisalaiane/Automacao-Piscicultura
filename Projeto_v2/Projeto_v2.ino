@@ -7,8 +7,8 @@
 
 // Update these with values suitable for your network.
 
-const char *ssid = "Silva";
-const char *password = "familiaselotto321";
+const char *ssid = "Gilza";
+const char *password = "gilmar91";
 const char *mqtt_server = "test.mosquitto.org";
 
 // Thinkspeak to upload data
@@ -17,6 +17,9 @@ const char * myWriteAPIKey = "ASBZB5RPBRJVW33G";
 
 const int rele2 = D7;
 const int rele = D8;
+
+const int ledazul = D1;
+const int ledvermelho = D3;
 
 String horario;
 String STRmsg;
@@ -29,6 +32,8 @@ PubSubClient client(espClient);
 
 void ligarsistema()
 {
+    ThingSpeak.writeField(myChannelNumber, 1, 1, myWriteAPIKey);
+
     Serial.println("Aparelho Ligado!");
     client.publish("IOTFGFatec/status", "AT01");
 
@@ -83,8 +88,10 @@ void ligarsistema()
     delay(6000);
 
     Serial.println("###################################");
-    ThingSpeak.writeField(myChannelNumber, 1, 1, myWriteAPIKey);
     Serial.println("");
+    delay(1000);
+    ThingSpeak.writeField(myChannelNumber, 1, 0, myWriteAPIKey);
+
 }
 
 void timerligar()
@@ -172,12 +179,19 @@ void setup()
     Serial.begin(115200);
     pinMode(rele, OUTPUT);
     pinMode(rele2, OUTPUT);
+    pinMode(ledazul, OUTPUT);
+    pinMode(ledvermelho, OUTPUT);
+
+    digitalWrite(rele, HIGH);
+    digitalWrite(rele2, HIGH);
 
     setup_wifi();
     client.setServer(mqtt_server, 1883);
     client.setCallback(callback);
     timeClient.begin(); //horario
-    ThingSpeak.begin(client);
+    ThingSpeak.begin(espClient);
+
+    
 }
 
 void loop()
@@ -197,6 +211,8 @@ void loop()
 
     if (STRmsg == "AUT1")
     {
+        digitalWrite(ledazul, HIGH);
+        digitalWrite(ledvermelho, LOW);
         timerligar();
     }
     else if (STRmsg == "ATIVAR1")
@@ -208,6 +224,9 @@ void loop()
     }
     else if (STRmsg == "M1")
     {
+        digitalWrite(ledvermelho, HIGH);
+        digitalWrite(ledazul, LOW);
+
         Serial.println("Modo Manual Ativado!");
         Serial.println("");
         client.publish("IOTFGFatec/status", "APOFF01");
