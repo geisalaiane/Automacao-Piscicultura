@@ -14,11 +14,11 @@ const char *mqtt_server = "mqtt.eclipse.org";
 unsigned long myChannelNumber = 1172259;
 const char *myWriteAPIKey = "ASBZB5RPBRJVW33G";
 
-const int rele2 = D7;
-const int rele = D8;
+const int rele2 = D1;
+const int rele = D0;
 
-const int ledazul = D1;
-const int ledvermelho = D3;
+const int ledazul = D8;
+const int ledvermelho = D7;
 
 String horario;
 String STRmsg;
@@ -34,8 +34,7 @@ void ligarsistema()
     ThingSpeak.writeField(myChannelNumber, 1, 1, myWriteAPIKey);
 
     Serial.println("Aparelho Ligado!");
-    client.publish("IOTFGFatec/status", "AT01");
-
+    
     digitalWrite(rele, HIGH);
     digitalWrite(rele2, HIGH);
     delay(1000);
@@ -89,7 +88,6 @@ void ligarsistema()
     Serial.println("###################################");
     Serial.println("");
     delay(1000);
-    ThingSpeak.writeField(myChannelNumber, 1, 0, myWriteAPIKey);
 }
 
 void timerligar()
@@ -213,7 +211,6 @@ void loop()
     }
     else if (STRmsg == "ATIVAR1")
     {
-        client.publish("IOTFGFatec/status", "APON01");
         ligarsistema();
         STRmsg = "M1";
         delay(1000);
@@ -225,7 +222,6 @@ void loop()
 
         Serial.println("Modo Manual Ativado!");
         Serial.println("");
-        client.publish("IOTFGFatec/status", "APOFF01");
         Serial.println("Aparelho Desligado!");
         delay(1000);
     }
