@@ -4,16 +4,15 @@
 #include <WiFiUdp.h>
 #include "ThingSpeak.h"
 
-
 // Update these with values suitable for your network.
 
-const char *ssid = "Gilza";
-const char *password = "gilmar91";
-const char *mqtt_server = "test.mosquitto.org";
+const char *ssid = "IOT";
+const char *password = "iot1234iot";
+const char *mqtt_server = "mqtt.eclipse.org";
 
 // Thinkspeak to upload data
 unsigned long myChannelNumber = 1172259;
-const char * myWriteAPIKey = "ASBZB5RPBRJVW33G";
+const char *myWriteAPIKey = "ASBZB5RPBRJVW33G";
 
 const int rele2 = D7;
 const int rele = D8;
@@ -91,7 +90,6 @@ void ligarsistema()
     Serial.println("");
     delay(1000);
     ThingSpeak.writeField(myChannelNumber, 1, 0, myWriteAPIKey);
-
 }
 
 void timerligar()
@@ -190,8 +188,6 @@ void setup()
     client.setCallback(callback);
     timeClient.begin(); //horario
     ThingSpeak.begin(espClient);
-
-    
 }
 
 void loop()
