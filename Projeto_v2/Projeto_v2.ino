@@ -19,6 +19,7 @@ const int rele = D0;
 
 const int ledazul = D7;
 const int ledvermelho = D8;
+const int ledmqtt = D2;
 
 String horario;
 String STRmsg;
@@ -135,7 +136,7 @@ void reconnect()
         if (client.connect(clientId.c_str()))
         {
             Serial.println("Conectado ao Broker");
-            digitalWrite(ledazul, HIGH);
+            digitalWrite(ledmqtt, HIGH);
             // Once connected, publish an announcement...
             client.publish("IOTFGFatec/status", "ON");
             // ... and resubscribe
@@ -143,7 +144,7 @@ void reconnect()
         }
         else
         {
-            digitalWrite(ledazul, LOW);
+            digitalWrite(ledmqtt, LOW);
             Serial.print("failed, rc=");
             Serial.print(client.state());
             Serial.println(" try again in 5 seconds");
