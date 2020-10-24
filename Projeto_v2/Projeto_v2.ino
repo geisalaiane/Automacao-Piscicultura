@@ -17,8 +17,8 @@ const char *myWriteAPIKey = "ASBZB5RPBRJVW33G";
 const int rele2 = D1;
 const int rele = D0;
 
-const int ledazul = D8;
-const int ledvermelho = D7;
+const int ledazul = D7;
+const int ledvermelho = D8;
 
 String horario;
 String STRmsg;
@@ -43,13 +43,13 @@ void ligarsistema()
     digitalWrite(rele, HIGH);
     digitalWrite(rele2, HIGH);
     Serial.println("(Desligado)");
-    delay(2000);
+    delay(20000);
 
     Serial.println("Primeiro lanço de ração");
     digitalWrite(rele, LOW);
     digitalWrite(rele2, LOW);
     Serial.println("(Ligado)");
-    delay(6000);
+    delay(75000);
 
     Serial.println("-------------------");
 
@@ -57,30 +57,14 @@ void ligarsistema()
     digitalWrite(rele, HIGH);
     digitalWrite(rele2, HIGH);
     Serial.println("(Desligado)");
-    delay(2000);
+    delay(20000);
 
     Serial.println("Segundo lanço de ração");
     digitalWrite(rele, LOW);
     digitalWrite(rele2, LOW);
     Serial.println("(Ligado)");
-    delay(6000);
+    delay(75000);
 
-    Serial.println("-------------------");
-
-    Serial.println("Terceiro tempo de espera");
-    digitalWrite(rele, HIGH);
-    digitalWrite(rele2, HIGH);
-    Serial.println("(Desligado)");
-    delay(2000);
-
-    Serial.println("Terceiro lanço de ração");
-    digitalWrite(rele, LOW);
-    digitalWrite(rele2, LOW);
-    Serial.println("(Ligado)");
-    delay(6000);
-
-    digitalWrite(rele, HIGH);
-    digitalWrite(rele2, HIGH);
     Serial.println("-------------------");
 
     delay(6000);
@@ -97,11 +81,11 @@ void timerligar()
     horario = timeClient.getFormattedTime();
     Serial.println(horario);
 
-    if (horario == "22:21:00")
+    if (horario == "09:00:00")
     {
         ligarsistema();
     }
-    else if (horario == "22:23:00")
+    else if (horario == "15:00:00")
     {
         ligarsistema();
     }
