@@ -39,12 +39,6 @@ void ligarsistema()
     digitalWrite(rele2, HIGH);
     delay(1000);
 
-    Serial.println("Primeiro tempo de espera");
-    digitalWrite(rele, HIGH);
-    digitalWrite(rele2, HIGH);
-    Serial.println("(Desligado)");
-    delay(20000);
-
     Serial.println("Primeiro lanço de ração");
     digitalWrite(rele, LOW);
     digitalWrite(rele2, LOW);
@@ -53,7 +47,7 @@ void ligarsistema()
 
     Serial.println("-------------------");
 
-    Serial.println("Segundo tempo de espera");
+    Serial.println("Tempo de espera");
     digitalWrite(rele, HIGH);
     digitalWrite(rele2, HIGH);
     Serial.println("(Desligado)");
@@ -67,7 +61,9 @@ void ligarsistema()
 
     Serial.println("-------------------");
 
-    delay(6000);
+    digitalWrite(rele, HIGH);
+    digitalWrite(rele2, HIGH);
+    delay(1000);
 
     Serial.println("###################################");
     Serial.println("");
@@ -114,8 +110,10 @@ void setup_wifi()
 
     Serial.println("");
     Serial.println("WiFi connected");
+    
     Serial.println("IP address: ");
     Serial.println(WiFi.localIP());
+
 }
 
 void callback(char *topic, byte *payload, unsigned int length)
@@ -137,6 +135,7 @@ void reconnect()
         if (client.connect(clientId.c_str()))
         {
             Serial.println("Conectado ao Broker");
+            digitalWrite(ledazul, HIGH);
             // Once connected, publish an announcement...
             client.publish("IOTFGFatec/status", "ON");
             // ... and resubscribe
@@ -144,6 +143,7 @@ void reconnect()
         }
         else
         {
+            digitalWrite(ledazul, LOW);
             Serial.print("failed, rc=");
             Serial.print(client.state());
             Serial.println(" try again in 5 seconds");
