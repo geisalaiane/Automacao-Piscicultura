@@ -54,8 +54,8 @@ ___
 ~~~~
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-const char *ssid = "Gilza";                 //WiFi name
-const char *password = "gilmar91";          //WiFi password
+const char *ssid = "iot";                 //WiFi name
+const char *password = "iot123iot";          //WiFi password
 const char *mqtt_broker = "broker.emqx.io"; //broker público
 const int mqtt_port = 1883;                 //porta padrão de comunicação
 WiFiClient espClient;
