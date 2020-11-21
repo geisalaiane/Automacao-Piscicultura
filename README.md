@@ -32,7 +32,7 @@ Para o controle de ambos os motores, utilizamos um módulo relé 5v, junto a pro
 ### 📄 Código
 
 Representação da comunicação Alicativo/Protótipo
-"[conexao](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/Conex%C3%A3o%20App.jpg?raw=true)
+![conexao](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/Conex%C3%A3o%20App.jpg?raw=true)
 
 #### Implementação do Horário
 ```
