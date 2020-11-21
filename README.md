@@ -18,7 +18,7 @@ Para a parte física do alimentador, utilizamos canos pvc de 4 polegadas, um mot
 ![motor2](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/motor-microonda.png?raw=true)
 
 Estrutura pronta:
-![legenda](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/Capturar.JPG)
+![capturar](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/Capturar.JPG?raw=true)
 
 
 ### 💻 Tecnologia 
