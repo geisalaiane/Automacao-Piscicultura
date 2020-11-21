@@ -13,12 +13,12 @@ O projeto consiste na criação de um protótipo voltado para a piscicultura, fo
 Para a parte física do alimentador, utilizamos canos pvc de 4 polegadas, um motor 127V de prato de microondas e um motor 127V de ventilador, sendo um para o controle de vazão da ração e o outro para o lanço da mesma. Colocamos o cano PVC em pé onde a ração fica armazenada, e perfuramos a tampa na parte de baixo, onde fixamos o motor com um fio de aço transpassado, que ao girar, deixa cair a ração para o motor de ventilador, onde é lançada para o tanque de água.
 
 ![cano](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Cano.png?raw=true)
-![joelho](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/joelho-pvc.png?raw=true)
 ![tampa](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/Tampa.png?raw=true)
 ![motor](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/motor%20ventilador%20ok.png?raw=true)
 ![motor2](https://github.com/geisalaiane/automacao-piscicultura/blob/master/img/motor-microonda.png?raw=true)
 
-
+Estrutura pronta:
+![legenda](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/Capturar.JPG)
 
 
 ### 💻 Tecnologia 
@@ -27,11 +27,12 @@ Para o controle de ambos os motores, utilizamos um módulo relé 5v, junto a pro
 
 ![componentes](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/componentes.jpg?raw=true)
 
-### 🔧 Teste
 
-Para calibração do tempo de despejo de ração, fomos colocando determinado período de tempo, testando 5 vezes, e fazendo a média de pesos da ração dispensada. Conseguimos chegar em um tempo padrão, onde obtivemos 1KG de ração despejada.
 
 ### 📄 Código
+
+Representação da comunicação Alicativo/Protótipo
+"[conexao](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/Conex%C3%A3o%20App.jpg?raw=true)
 
 #### Implementação do Horário
 ```
@@ -114,48 +115,35 @@ void setup() {
 }
 void ligarsistema()
 {
+    ThingSpeak.writeField(myChannelNumber, 1, 1, myWriteAPIKey);
     Serial.println("Aparelho Ligado!");
-    client.publish("IOTFGFatec/status", "Aparelho Ligado!");
     digitalWrite(rele, HIGH);
     digitalWrite(rele2, HIGH);
     delay(1000);
-    digitalWrite(rele, HIGH);
-    digitalWrite(rele2, HIGH);
-    Serial.println("(Desligado)");
-    delay(2000);
-    timeClient.update();
-    horario = timeClient.getFormattedTime();
-    Serial.println(horario);
     Serial.println("Primeiro lanço de ração");
     digitalWrite(rele, LOW);
     digitalWrite(rele2, LOW);
-    delay(6000);
+    Serial.println("(Ligado)");
+    delay(75000);
+    Serial.println("-------------------");
+    Serial.println("Tempo de espera");
     digitalWrite(rele, HIGH);
     digitalWrite(rele2, HIGH);
-    delay(2000);
-    timeClient.update();
-    horario = timeClient.getFormattedTime();
-    Serial.println(horario);
+    Serial.println("(Desligado)");
+    delay(20000);
     Serial.println("Segundo lanço de ração");
     digitalWrite(rele, LOW);
     digitalWrite(rele2, LOW);
-    delay(6000);
+    Serial.println("(Ligado)");
+    delay(75000);
+    Serial.println("-------------------");
     digitalWrite(rele, HIGH);
     digitalWrite(rele2, HIGH);
-    delay(2000);
-    timeClient.update();
-    horario = timeClient.getFormattedTime();
-    Serial.println(horario);
-    Serial.println("Terceiro lanço de ração");
-    digitalWrite(rele, LOW);
-    digitalWrite(rele2, LOW);
-    delay(6000);
-    digitalWrite(rele, HIGH);
-    digitalWrite(rele2, HIGH);
-    delay(6000);
-
+    delay(1000);
+    Serial.println("###################################");
+    Serial.println("");
+    delay(1000);
 }
-```
 ___
 #### Função para lanço automático
 ```
