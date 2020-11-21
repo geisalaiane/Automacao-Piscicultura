@@ -145,6 +145,7 @@ void ligarsistema()
     delay(1000);
 }
 ___
+```
 #### Função para lanço automático
 ```
 void timerligar()
