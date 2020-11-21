@@ -1,6 +1,6 @@
 # 🌻 Bem vindo à página do nosso projeto
 
-#### Projeto realizado pelos alunos [Fabrício da Silva Selotto](https://gitlab.com/Selotto) e [Geísa Laiane Cardim](https://gitlab.com/geisa), da Fatec Shunji Nishimura, do curso de Big Data no Agronegócio.
+#### Projeto realizado pelos alunos [Fabrício da Silva Selotto](https://gitlab.com/Selotto) e [Geísa Laiane Cardim](https://github.com/geisalaiane), da Fatec Shunji Nishimura, do curso de Big Data no Agronegócio.
 
 ## 📋 Introdução
 
