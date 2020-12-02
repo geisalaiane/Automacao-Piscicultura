@@ -4,7 +4,11 @@
 
 ## 📋 Introdução
 
-O projeto consiste na criação de um protótipo voltado para a piscicultura, focando na área da alimentação. Trata-se de um alimentador automático para peixes, de baixo custo e uso doméstico, utlizando tecnologia IOT. Esta foi a ordem de desenvolvimento e montagem:
+O projeto consiste na criação de um protótipo voltado para a piscicultura, focando na área da alimentação. Trata-se de um alimentador automático para peixes, de baixo custo e uso doméstico, utlizando tecnologia IOT. 
+
+[![Everything Is AWESOME](https://img.youtube.com/vi/ioCjTOMegFA/0.jpg)](https://www.youtube.com/watch?v=ioCjTOMegFA "Apresentação")
+
+Esta foi a ordem de desenvolvimento e montagem:
 ![cronograma](https://github.com/geisalaiane/Automacao-Piscicultura/blob/master/img/Fluxograma%20de%20Cronograma%20de%20Prot%C3%B3tipo.jpg?raw=true)
 
 ## 📌 Protótipo
